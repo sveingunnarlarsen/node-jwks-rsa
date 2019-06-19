@@ -39,7 +39,8 @@ export class JwksClient {
       json: true,
       uri: this.options.jwksUri,
       strictSSL: this.options.strictSsl,
-      headers: this.options.requestHeaders
+      headers: this.options.requestHeaders,
+      proxy: this.options.proxy,
     }, (err, res) => {
       if (err || res.statusCode < 200 || res.statusCode >= 300) {
         this.logger('Failure:', res && res.body || err);
